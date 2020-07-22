@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin : 0;
+        }
+
+        .box_wrapper{
+            width: 300px;
+            height: 300px;
+            border: 3px solid red;
+            border-radius: 5px;
+
+            position: relative;
+            left: 100px;
+        } /** position static 명시 x **/
+        /** relative 일때는 뒤에 absolute들 영향 **/
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: lightsalmon;
+
+            border-radius: 5px;
+
+            /** 포지션 탑으로 50픽셀 멀어진다**/ 
+            position : absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+
+            border-radius: 5px;
+
+
+            position: absolute;
+            z-index: 5;
+        } /** 숫자가큰 애가 위에옴 z-index**/
+
+    </style>
+</head>
+<body>
+    <div class="box_wrapper">
+    <div class="box"></div>
+    <div class="box2"></div>    
+    </div>
+</body>
+</html>
