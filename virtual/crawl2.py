@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import csv
 
 
 
@@ -19,3 +20,9 @@ for movie in movie_section:
     movie_dict["title"] = movie_title
     movie_data.append(movie_dict)
 print(movie_data)
+
+with open('./naver_movie.csv', 'a') as csvfile :
+    fieldnames = ['title', 'code']
+    csvwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    for i in movie_data:
+        csvwriter.writerow(i)
