@@ -24,5 +24,6 @@ print(movie_data)
 with open('./naver_movie.csv', 'a') as csvfile :
     fieldnames = ['title', 'code']
     csvwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    csvwriter.writerow({'title':'title','code':'code'})
     for i in movie_data:
         csvwriter.writerow(i)
